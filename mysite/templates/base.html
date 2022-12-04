@@ -1,0 +1,28 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink_to_fit=no">
+    <title>{% block title %}Новости со свего мира{% endblock %}</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+{% include 'inc/_nav.html' %}
+
+<div class="container mt-3">
+    <h1>{{ title }}</h1>
+    <div class="row">
+        <div class="col-md-4">
+            {% block sidebar %}{% endblock %}
+        </div>
+        <div class="col-md-8">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

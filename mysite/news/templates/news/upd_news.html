@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование новости
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Редактирование новости</h1>
+<form action="{% url 'upd_news' pk=object.pk %}" method='post'>
+    {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Обновить новость</button>
+</form>
+{% endblock %}
