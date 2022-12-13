@@ -4,8 +4,11 @@ from django.core.exceptions import ValidationError
 
 
 class NewsForm(forms.Form):
-    title = forms.CharField(max_length=150, label='Заголовок',
-                            widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # TODO так выглядит симпатичнее, как по мне :)
+    title = forms.CharField(
+        max_length=150, label='Заголовок',
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
     content = forms.CharField(label='Текст новости', required=False,
                               widget=forms.Textarea(attrs={'class': 'form-control'}))
     is_publish = forms.BooleanField(label='Опубликовать', initial=True, required=False)

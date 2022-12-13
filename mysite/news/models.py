@@ -20,6 +20,8 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+        # TODO если коллекция не меняется в рантайме, то используй кортеж,
+        #  он меньше весит и гарантирует ниезменяемость
         ordering = ['-created_at']
 
 
